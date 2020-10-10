@@ -15,4 +15,4 @@ jobs:
     - uses: actions/checkout@v2
       
     - name: make all
-      run:  make all -C Mini-Project/Cpp-Mini-Project/
+      run:  make all -C Cpp-Mini-Project/
