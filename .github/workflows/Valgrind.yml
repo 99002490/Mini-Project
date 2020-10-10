@@ -20,4 +20,4 @@ jobs:
     - name: make test
       run: |
         make test -C Mini-Project/Cpp-Mini-Project/
-        valgrind .Mini-Project/Cpp-Mini-Project/Tests
+        valgrind .Mini-Project/Cpp-Mini-Project/all.out
