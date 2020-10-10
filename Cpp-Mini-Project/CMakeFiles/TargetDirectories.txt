@@ -1,0 +1,3 @@
+/home/user/Downloads/Cpp-Mini-Project/CMakeFiles/rebuild_cache.dir
+/home/user/Downloads/Cpp-Mini-Project/CMakeFiles/edit_cache.dir
+/home/user/Downloads/Cpp-Mini-Project/CMakeFiles/Tests.dir
