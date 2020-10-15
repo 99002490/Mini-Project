@@ -1,35 +1,24 @@
+
 name: Valgrind
 
- 
-
 on:
-push:
-branches: [ main ]
-pull_request:
-branches: [ main ]
-
- 
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
-build:
+  build:
 
- 
+    runs-on: ubuntu-latest
 
-runs-on: ubuntu-latest
-
- 
-
-steps:
-- name: Install cmake
-run: sudo apt-get install cmake
-- name: Install gtest manually
-run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
-- uses: actions/checkout@v2
-- name: apt install dependency
-run: |
-sudo apt-get -y install valgrind
-sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev
-- name: make test
-run: |
-make -C Cpp_Mini_Project
-cd source && valgrind ./all.out
+    steps:
+    - uses: actions/checkout@v2
+    - name: apt install dependency
+      run: |
+        sudo apt-get -y install valgrind
+        sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
+    - name: make test
+      run: |
+        make Cpp_Mini_Project
+        valgrind chmod 777 source/all.out
