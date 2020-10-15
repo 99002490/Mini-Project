@@ -21,4 +21,4 @@ jobs:
     - name: make test
       run: |
         make Cpp_Mini_Project
-        valgrind chmod 777 source/all.out
+        valgrind chmod 777 Cpp_Mini_Project/all.out
